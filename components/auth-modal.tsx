@@ -44,7 +44,7 @@ export default function AuthModal() {
       <form onSubmit={handleSubmit}>
         <div className="space-y-4">
           <div>
-            <p className="text-sm text-gray-300 uppercase tracking-wide mb-2">Enter Discord Backup Code</p>
+            <p className="text-sm text-gray-400 uppercase font-semibold tracking-wide mb-2">Enter Discord Backup Code</p>
             <Input
               type="text"
               placeholder="8-digit backup code"
