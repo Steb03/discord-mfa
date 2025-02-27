@@ -1,0 +1,15 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model VerificationCode {
+  id        String   @id @default(cuid())
+  code      String
+  status    String   @default("PENDING")
+  createdAt DateTime @default(now())
+}

