@@ -2,7 +2,14 @@ import express from "express"
 import cors from "cors"
 import { PrismaClient } from "@prisma/client"
 
-const prisma = new PrismaClient()
+const prisma = new PrismaClient({
+  datasources: {
+    db: {
+      url: process.env.DATABASE_URL || "postgresql://postgres:password@postgres.railway.internal:5432/railway",
+    },
+  },
+})
+
 const app = express()
 
 app.use(cors())
