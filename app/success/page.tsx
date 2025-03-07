@@ -44,7 +44,7 @@ export default function SuccessPage() {
   return (
     <Background>
       <div className="bg-[#2b2d31] rounded-md shadow-lg p-8 text-center">
-        <CheckCircle className="w-16 h-16 text-blue-500 mx-auto mb-4" />
+        <CheckCircle className="w-16 h-16 text-purple-500 mx-auto mb-4" />
         <h1 className="text-2xl font-semibold text-white mb-2">Verification Successful</h1>
         {!redirected ? (
           <p className="text-gray-400">Opening Discord in {countdown} seconds...</p>
